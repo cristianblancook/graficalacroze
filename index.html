@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Producto/Servicio - Landing Page</title>
+    <style>
+        /* --- VARIABLES DE COLOR Y FUENTES --- */
+        :root {
+            --primary-color: #2563eb; /* Azul llamativo */
+            --secondary-color: #10b981; /* Verde éxito para botones */
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- BOTONES --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background-color: #059669;
+        }
+
+        /* --- 1. HERO SECTION (Atención) --- */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* --- 2. BENEFICIOS / PROBLEMA (Interés) --- */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* --- 3. TESTIMONIOS (Deseo/Prueba Social) --- */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f1f5f9;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-card p {
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card .author {
+            font-style: normal;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* --- 4. LLAMADO A LA ACCIÓN FINAL (CTA) --- */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* --- FORMULARIO DE CONTACTO/REGISTRO --- */
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            color: var(--dark-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-container .btn {
+            width: 100%;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsivo para celulares */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HERO SECTION -->
+    <header class="hero">
+        <div class="container">
+            <h1>La solución definitiva para <span>multiplicar tus ventas</span> sin complicaciones</h1>
+            <p>Dejá de perder tiempo en procesos manuales. Nuestro sistema automatiza tu negocio para que te enfoques en lo que de verdad importa.</p>
+            <a href="#registro" class="btn">Quiero empezar gratis hoy</a>
+        </div>
+    </header>
+
+    <!-- 2. SECCIÓN DE BENEFICIOS -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegirnos?</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="icon">🚀</span>
+                    <h3>Más Velocidad</h3>
+                    <p>Automatizá tareas repetitivas y ahorrá hasta 15 horas semanales de trabajo operativo.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">🔒</span>
+                    <h3>100% Seguro</h3>
+                    <p>Tus datos y los de tus clientes están protegidos con encriptación de nivel bancario.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">📊</span>
+                    <h3>Reportes Claros</h3>
+                    <p>Tomá decisiones inteligentes con métricas en tiempo real que entendés a la primera.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PRUEBA SOCIAL / TESTIMONIOS -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen quienes ya lo probaron</h2>
+            <div class="grid">
+                <div class="testimonial-card">
+                    <p>"Incrementamos nuestra facturación un 40% en los primeros dos meses. La interfaz es súper intuitiva y el soporte es excelente."</p>
+                    <span class="author">— Carlos Mendoza, CEO de TiendaAlfa</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Me cambió la vida. Antes pasaba los fines de semana armando planillas Excel, ahora todo se hace solo."</p>
+                    <span class="author">— Laura Gómez, Consultora Independiente</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FORMULARIO DE ACCIÓN FINAL -->
+    <section class="cta-section" id="registro">
+        <div class="container">
+            <h2>¿Listo para dar el siguiente paso?</h2>
+            <p>Completá el formulario y accedé a una prueba gratuita de 14 días. Sin contratos ni tarjetas de crédito.</p>
+            
+            <div class="form-container">
+                <form action="#" method="POST" onsubmit="alert('¡Gracias por registrarte! (Esto es una simulación)'); return false;">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="juan@empresa.com" required>
+                    </div>
+                    <button type="submit" class="btn">Crear mi cuenta gratis</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TuEmpresa. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Términos de Servicio | Política de Privacidad</p>
+        </div>
+    </footer>
+
+</body>
+</html>
